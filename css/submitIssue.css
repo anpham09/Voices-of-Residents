@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(213, 250, 219);
+}
+#submitIssueFormContainer {
+    padding-top: 100px;
+}
+.formTitle {
+    color: #205a4c;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 28px;
+    text-align: center;
+}
+.formDivide {
+    border: 1px dotted #0e3c31;
+    margin: 14px 10px 30px;
+}
+.formLabel {
+    display: block;
+    color: #165e4d;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+.formLabel span {
+    color: red;
+}
+.formInput {
+    width: 90%;
+    padding: 10px 12px;
+    margin: 0 20px;
+    outline: none;
+    border: 1px solid #0e3c31;
+    color: #0e3c31;
+
+    /* color: #b8f0c2; */
+    font-size: 17px;
+    line-height: 20px;
+    border-radius: 8px;
+    background-color: #b8f0c2;
+
+}
+.formInput::placeholder {
+    color: #0e3c31;
+    font-size: 17px;
+    background-color: #b8f0c2;
+}
+.formInput:focus {
+    border: 2px solid rgb(55, 108, 73);
+}
+.formBox {
+    margin-left: 10px;
+}

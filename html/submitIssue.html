@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/submitIssue.css">
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="nav_bar_left">
+            <div class="nav_item"><a href="./submitIssue.html">Submit Issue</a></div>
+            <div class="nav_item"><a href="./viewIssues.html">View Issues</a></div>
+            <div class="nav_item"><a href="">Join the Discussion</a></div>
+        </div>
+        <div class="nav_bar_center"><img src="" alt="Logo"></div>
+        <div class="nav_bar_right">
+            <button class="nav_bar_right_btn">Categories</button>
+            <div class="nav_bar_right_content_container">
+                <div class="nav_bar_right_circles">
+                    <span class="circles1 circles"></span>
+                    <span class="circles2 circles"></span>
+                </div>
+                <div class="nav_bar_right_content">
+                    
+                    <a href="" class="nav_bar_right_categories">Healthcare</a>
+                    <a href="" class="nav_bar_right_categories">Environment</a>
+                    <a href="" class="nav_bar_right_categories">Immigration</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <form action="" id="submitIssueFormContainer" class="submitContainer">
+        <div class="formTitle">Submit Issue Form</div>
+        <hr class="formDivide">
+
+        <div class="formBox">
+            <label for="issueTitle" class="formLabel">Issue Title<span>*</span></label>
+            <input name="issueTitle" type="text" id="issueTitle" class="formInput"
+            placeholder="Enter Issue Title">
+        </div>
+        <div class="formBox">
+            <label for="issueCategory" class="formLabel">Category<span>*</span></label>
+            <select name="issueCategory" id="issueCategory" class="formInput">
+                <option value="">Please choose a category</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Environment">Environment</option>
+                <option value="Immigration">Immigration</option>
+            </select>
+        </div>
+        <div class="formBox">
+            <label for="issueDesc" class="formLabel">Issue Description<span>*</span></label>
+            <textarea name="issueDesc" id="issueDesc" rows="4" 
+            placeholder="Write your issue description" class="formInput"></textarea>
+        </div>
+        <div class="formBox">
+            <label for="issueImg" class="formLabel">Issue Image<span>*</span></label>
+            <img src="../img/right_arrow.png" alt="" class="formFileUploaded">
+        </div>
+        <label class="formFileContainer">
+            <input name="formFile" type="file" id="formFile">
+            <div for="formFile" class="formFileContent">
+                <div class="formFileImg">
+                    <img src="../img/pdf_file.png" alt="">
+                </div>
+                <p class="formFileText1">Drag and drop the document here </br> or <span>upload from your computer</span></p>
+                <p class="formFileText2">JPG, PNG - Maximum 1MB/file</p>
+            </div>
+        </label>
+
+        <button class="btnPrimary" id="formBtnSubmit" type="submit">
+            <span class="loader"></span>
+            <span class="form-btn-save">Save</span>
+        </button>
+    </form>
+</body>
+</html>

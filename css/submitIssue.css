@@ -52,3 +52,77 @@ body {
 .formBox {
     margin-left: 10px;
 }
+#issueDesc {
+    margin-bottom: 20px;
+}
+
+#formBtnSubmit {
+    padding: 10px 0;
+    width: 100px;
+    margin: 20px 30px;
+    float: right;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    background-color: #0e3c31;
+    color: rgb(217, 250, 222);
+    font-size: 16px;
+}
+.loader {
+    display: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#formFile {
+    display: none;
+}
+.formFileContainer {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    border: 1px dashed #dcdee3;
+    cursor: pointer;
+}
+.formFileImg {
+    display: inline-block;
+    padding: 12px;
+    background-color: #eff0f2;
+    border-radius: 8px;
+}
+.formFileContent img {
+width: 30px;
+height: 30px;
+object-fit: contain;
+}
+.formFileText1 {
+margin: 12px 0 8px;
+line-height: 25px;
+font-weight: 500;
+}
+.formFileText1 span {
+color: #1751d0;
+}
+.formFileText2 {
+color: #474b55;
+}
+.formFileUploaded {
+display: none;
+width: 300px;
+}
+  

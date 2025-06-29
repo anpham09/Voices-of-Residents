@@ -74,9 +74,6 @@
     background-color: #46af96;
     color: rgb(141, 244, 156);
 }
-.nav_bar_right_circles {
-    /* display: none; */
-}
 .nav_bar_right:hover .nav_bar_right_content_container, .nav_bar_right:hover .nav_bar_right_circles {
     display: block;
 }

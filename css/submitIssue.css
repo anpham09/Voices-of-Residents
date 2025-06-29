@@ -95,14 +95,15 @@ body {
 .formFileContainer {
     display: block;
     padding: 20px 0;
+    margin: 0 30px;
     text-align: center;
-    border: 1px dashed #dcdee3;
+    border: 2px dashed rgb(168, 223, 177);
     cursor: pointer;
 }
 .formFileImg {
     display: inline-block;
     padding: 12px;
-    background-color: #eff0f2;
+    background-color: #b8f0c2;
     border-radius: 8px;
 }
 .formFileContent img {

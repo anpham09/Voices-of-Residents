@@ -76,6 +76,7 @@
 }
 .nav_bar_right:hover .nav_bar_right_content_container, .nav_bar_right:hover .nav_bar_right_circles {
     display: block;
+    cursor: pointer;
 }
 
 /* Thinking box effect */

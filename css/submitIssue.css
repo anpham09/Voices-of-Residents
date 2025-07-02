@@ -14,6 +14,8 @@ body {
 .formDivide {
     border: 1px dotted #0e3c31;
     margin: 14px 10px 30px;
+    border: 2px dashed rgb(168, 223, 177);
+
 }
 .formLabel {
     display: block;
@@ -50,7 +52,7 @@ body {
     border: 2px solid rgb(55, 108, 73);
 }
 .formBox {
-    margin-left: 10px;
+    margin-left: 10px；
 }
 #issueDesc {
     margin-bottom: 20px;
@@ -66,7 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 35px;
-    background-color: #0e3c31;
+    background-color: #1f804f;
     color: rgb(217, 250, 222);
     font-size: 16px;
 }
@@ -107,23 +109,25 @@ body {
     border-radius: 8px;
 }
 .formFileContent img {
-width: 30px;
-height: 30px;
-object-fit: contain;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 .formFileText1 {
-margin: 12px 0 8px;
-line-height: 25px;
-font-weight: 500;
+    margin: 12px 0 8px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #47554b;
+
 }
 .formFileText1 span {
-color: #1751d0;
+    color: hsl(126, 83%, 28%);
 }
 .formFileText2 {
-color: #474b55;
+    color: #47554b;
 }
 .formFileUploaded {
-display: none;
-width: 300px;
+    display: none;
+    width: 300px;
 }
   

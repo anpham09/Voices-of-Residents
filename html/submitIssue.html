@@ -34,17 +34,17 @@
         </div>
     </div>
 
-    <form action="" id="submitIssueFormContainer" class="submitContainer">
+    <form id="submitIssueFormContainer" class="submitContainer">
         <div class="formTitle">Submit Issue Form</div>
         <hr class="formDivide">
 
         <div class="formBox">
-            <label for="issueTitle" class="formLabel">Issue Title<span>*</span></label>
+            <label for="issueTitle" class="formLabel">Issue Title<span>*</span></label><p class="errMessage">Please input valid value</p>
             <input name="issueTitle" type="text" id="issueTitle" class="formInput"
             placeholder="Enter Issue Title">
         </div>
         <div class="formBox">
-            <label for="issueCategory" class="formLabel">Category<span>*</span></label>
+            <label for="issueCategory" class="formLabel">Category<span>*</span></label><p class="errMessage">Please input valid value</p>
             <select name="issueCategory" id="issueCategory" class="formInput">
                 <option value="">Please choose a category</option>
                 <option value="Healthcare">Healthcare</option>
@@ -53,18 +53,18 @@
             </select>
         </div>
         <div class="formBox">
-            <label for="issueDesc" class="formLabel">Issue Description<span>*</span></label>
+            <label for="issueDesc" class="formLabel">Issue Description<span>*</span></label><p class="errMessage">Please input valid value</p>
             <textarea name="issueDesc" id="issueDesc" rows="4" 
             placeholder="Write your issue description" class="formInput"></textarea>
         </div>
         <div class="formBox">
-            <label for="issueImg" class="formLabel">Issue Image<span>*</span></label>
+            <label for="issueImg" class="formLabel">Issue Image<span>*</span></label><p class="errMessage">Please input valid value</p>
             <img src="../img/right_arrow.png" alt="" class="formFileUploaded">
         </div>
         <label class="formFileContainer">
             <input name="formFile" type="file" id="formFile">
             <div for="formFile" class="formFileContent">
-                <div class="formFileImg">
+                <div class="formFileImg" id="formFileImg">
                     <img src="../img/pdf_file.png" alt="">
                 </div>
                 <p class="formFileText1">Drag and drop the document here </br> or <span>upload from your computer</span></p>
@@ -73,13 +73,14 @@
         </label>
 
         <button class="btnPrimary" id="formBtnSubmit" type="submit">
-            <span class="loader"></span>
             <span class="form-btn-save">Save</span>
         </button>
     </form>
 
-    <script defer type="module" src="../js/storage.js"></script>
-    <script defer type="module" src="../js/config.js"></script>
+    <!-- <script defer type="module" src="../js/config.js"></script> -->
     <script defer type="module" src="../js/submitIssue.js"></script>
+    <script defer type="module" src="../js/validation.js"></script>
+
+
 </body>
 </html>

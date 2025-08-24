@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/discussion.css">
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="nav_bar_left">
+            <div class="nav_item"><a href="./submitIssue.html">Submit Issue</a></div>
+            <div class="nav_item"><a href="./viewIssue.html">View Issues</a></div>
+            <div class="nav_item"><a href="./discussion.html">Join the Discussion</a></div>
+        </div>
+        <div class="nav_bar_center"><img src="" alt="Logo"></div>
+        <div class="nav_bar_right">
+            <button class="nav_bar_right_btn">Categories</button>
+            <div class="nav_bar_right_content_container">
+                <div class="nav_bar_right_circles">
+                    <span class="circles1 circles"></span>
+                    <span class="circles2 circles"></span>
+                </div>
+                <div class="nav_bar_right_content">
+                    <a href="" class="nav_bar_right_categories">Healthcare</a>
+                    <a href="" class="nav_bar_right_categories">Environment</a>
+                    <a href="" class="nav_bar_right_categories">Immigration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="discussion_section">
+        <h2>Community Discussion</h2>
+        <div class="discussion_container">
+            <div class="tags_container">
+                <h3>Active Hashtags</h3>
+                <ul id="tagsList"></ul>
+            </div>
+            <div class="comments_container">
+                <h3 id="currentTagTitle">Select a hashtag</h3>
+                <ul id="commentsList"></ul>
+                <textarea id="commentInput" placeholder="Write a comment with #hashtag"></textarea>
+                <button id="submitComment">Post Comment</button>
+            </div>
+        </div>
+    </section>
+
+    <script defer type="module" src="../js/discussion.js"></script>
+</body>
+</html>

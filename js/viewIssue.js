@@ -1,5 +1,3 @@
-import { app } from "./config.js"; // ensure Firebase initialized
-
 const issueContainer = document.getElementById("issues");
 const params = new URLSearchParams(window.location.search);
 const selectedCategory = params.get('category');
@@ -17,9 +15,11 @@ fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", { cache: "no-store" 
       return;
     }
 
-    let list = issueList;
+    // show newest issues first so freshly submitted reports are visible
+    const sorted = issueList.sort((a, b) => Number(b.id) - Number(a.id));
+    let list = sorted;
     if (selectedCategory) {
-      list = issueList.filter((issue) => issue.issueCategory === selectedCategory);
+      list = sorted.filter((issue) => issue.issueCategory === selectedCategory);
       const catAll = document.getElementById('cat_all');
       if (catAll) catAll.checked = false;
       const cb = document.querySelector(`.cat[value="${selectedCategory}"]`);

@@ -1,5 +1,3 @@
-import { app } from "./config.js";
-
 const form = document.getElementById('submitIssueFormContainer');
 const formFile = document.getElementById('formFile');
 const formFileContainer = document.querySelector('.formFileContainer');
@@ -16,7 +14,8 @@ formFile.addEventListener("change", (e) => {
   reader.onload = () => {
     formFileUploaded.src = reader.result;
     formFileUploaded.style.display = "block";
-    formFileContainer.style.display = "none";
+    // remove the upload placeholder once an image is chosen
+    formFileContainer.remove();
     data.image = reader.result;
   };
   reader.readAsDataURL(file);

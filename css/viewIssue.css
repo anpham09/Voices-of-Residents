@@ -1,44 +1,88 @@
 .filter_section {
-    margin: 120px auto 20px;
-    padding: 20px;
-    background-color: rgb(194, 247, 202);
-    border: 2px solid #205a4c;
-    border-radius: 12px;
-    width: 95%;
+  margin: 40px auto 20px;
+  margin-left: 1%;
+  padding: 20px;
+  background-color: rgb(194, 247, 202);
+  border: 2px solid #205a4c;
+  border-radius: 12px;
+  width: 95%;
 }
 
 .filter_section h2 {
-    color: #0e3c31;
-    margin-bottom: 15px;
+  color: #0e3c31;
+  margin-bottom: 15px;
 }
 
 .filter_group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .filter_group label,
 .filter_group span {
-    font-weight: bold;
-    color: #0e3c31;
-    margin-right: 10px;
+  font-weight: bold;
+  color: #0e3c31;
+  margin-right: 10px;
 }
 
 .filter_actions button {
-    margin-right: 10px;
+  margin-right: 10px;
 }
+
 #issues {
-    width: 95%;
-    margin: 0 auto 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  width: 95%;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
 .issue_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(194, 247, 202);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(194, 247, 202);
+  border: 2px solid #205a4c;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.issue_container:hover {
+  background-color: #b8f0c2;
+  transition: background-color 0.3s ease;
+}
+
+.issue_category {
+  background-color: #205a4c;
+  color: rgb(194, 247, 202);
+  text-align: center;
+  width: fit-content;
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.issue_title {
+  font-weight: bold;
+  font-size: 33px;
+  margin-bottom: 5px;
+  color: #0e3c31;
+}
+
+.issue_description {
+  font-size: 27px;
+  color: #165e4d;
+}
+
+.issue_container_right {
+  margin-left: 20px;
+}
+
+.issue_img {
+  width: 140px;
+  height: auto;
+}
     border: 2px solid #205a4c;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

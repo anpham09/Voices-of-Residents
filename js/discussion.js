@@ -1,3 +1,5 @@
+// Simple client-side discussion board using hashtags
+
 const data = JSON.parse(localStorage.getItem('discussionData') || '{}');
 
 const tagsList = document.getElementById('tagsList');

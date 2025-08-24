@@ -1,11 +1,10 @@
 .filter_section {
-    margin-top: 40px;
+    margin: 120px auto 20px;
     padding: 20px;
     background-color: rgb(194, 247, 202);
     border: 2px solid #205a4c;
     border-radius: 12px;
     width: 95%;
-    margin-left: 1%;
 }
 
 .filter_section h2 {
@@ -27,18 +26,22 @@
 .filter_actions button {
     margin-right: 10px;
 }
-.issue_container {
-    margin-top: 70px;
+#issues {
+    width: 95%;
+    margin: 0 auto 40px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+}
+.issue_container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: rgb(194, 247, 202); 
-    border: 2px solid #205a4c; 
+    background-color: rgb(194, 247, 202);
+    border: 2px solid #205a4c;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    margin-left: 1%;
 }
 .issue_container:hover {
     background-color: #b8f0c2;

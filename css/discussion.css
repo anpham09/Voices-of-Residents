@@ -1,25 +1,25 @@
 .discussion_section {
-    padding: 120px 20px 40px;
-    max-width: 900px;
-    margin: 0 auto;
+    margin: 120px auto 40px;
+    width: 95%;
+    padding: 20px;
+    background-color: rgb(194, 247, 202);
+    border: 2px solid #205a4c;
+    border-radius: 12px;
     color: #0e3c31;
-    background: #f8fffe;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .discussion_container {
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 .tags_container,
 .comments_container {
     flex: 1;
     background: #fff;
-    border-radius: 8px;
+    border: 2px solid #205a4c;
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 #tagsList li {
@@ -28,19 +28,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #e0f2f1;
+    background: #b8f0c2;
+    color: #0e3c31;
     padding: 6px 10px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    border-radius: 20px;
+    transition: 0.2s;
 }
 
 #tagsList li.active {
-    background: #1f846d;
-    color: #fff;
+    background: #205a4c;
+    color: rgb(194, 247, 202);
 }
 
 #tagsList li:hover {
-    background: #c8e6e5;
+    background: #8ee0a5;
 }
 
 #tagsList button {
@@ -70,8 +71,8 @@
     min-height: 60px;
     margin-top: 10px;
     padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #205a4c;
+    border-radius: 12px;
 }
 
 #submitComment {
@@ -79,7 +80,7 @@
     background: #1f846d;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 6px 12px;
     cursor: pointer;
     transition: 0.2s;

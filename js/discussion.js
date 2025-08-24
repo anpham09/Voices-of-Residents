@@ -1,5 +1,3 @@
-// Simple client-side discussion board using hashtags
-
 const data = JSON.parse(localStorage.getItem('discussionData') || '{}');
 
 const tagsList = document.getElementById('tagsList');
@@ -18,6 +16,7 @@ function renderTags() {
     Object.keys(data).forEach(tag => {
         const li = document.createElement('li');
         li.textContent = `#${tag} (${data[tag].votes || 0})`;
+        if (tag === currentTag) li.classList.add('active');
         li.addEventListener('click', () => selectTag(tag));
 
         const btn = document.createElement('button');
@@ -48,6 +47,7 @@ function renderTags() {
 function selectTag(tag) {
     currentTag = tag;
     currentTagTitle.textContent = `#${tag} Discussion`;
+    renderTags();
     renderComments(tag);
 }
 

@@ -1,11 +1,10 @@
-import { app } from "./config.js";
+import { app } from "./config.js"; // ensure Firebase initialized
 
 const issueContainer = document.getElementById("issues");
-if (!issueContainer) {
-  console.error('Missing container with id="issues"');
-}
+const params = new URLSearchParams(window.location.search);
+const selectedCategory = params.get('category');
 
-fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues")
+fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", { cache: "no-store" })
   .then((response) => {
     if (!response.ok) {
       throw new Error(`Request failed with status ${response.status}`);
@@ -17,21 +16,28 @@ fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues")
       console.error("Invalid response data");
       return;
     }
-
-    issueList.forEach((issue) => {
+    let list = issueList;
+    if (selectedCategory) {
+      list = issueList.filter((issue) => issue.issueCategory === selectedCategory);
+      const catAll = document.getElementById('cat_all');
+      if (catAll) catAll.checked = false;
+      const cb = document.querySelector(`.cat[value="${selectedCategory}"]`);
+      if (cb) cb.checked = true;
+    }
+    list.forEach((issue) => {
       const template = `
         <div class="issue_container">
           <div class="issue_container_left">
-            <div class="issue_category">${issue.issueCategory ?? ""}</div>
-            <div class="issue_title">${issue.issueTitle ?? ""}</div>
-            <div class="issue_description">${issue.issueDesc ?? ""}</div>
+            <div class="issue_category">${issue.issueCategory}</div>
+            <div class="issue_title">${issue.issueTitle}</div>
+            <div class="issue_description">${issue.issueDesc}</div>
           </div>
           <div class="issue_container_right">
-            <img src="${issue.image ?? ""}" alt="" class="issue_img">
+            <img src="${issue.image}" alt="" class="issue_img">
           </div>
         </div>
       `;
-      issueContainer?.insertAdjacentHTML("beforeend", template);
+      issueContainer.insertAdjacentHTML("beforeend", template);
     });
   })
   .catch((error) => {
@@ -39,31 +45,20 @@ fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues")
     alert("Failed to load issues. Please try again later.");
   });
 
-// Optional UI actions (attach only if elements exist)
-const exportBtn = document.getElementById("exportPdf");
-if (exportBtn) {
-  exportBtn.addEventListener("click", () => {
+
+
+  document.getElementById("exportPdf").addEventListener("click", () => {
     alert("PDF export coming soon.");
   });
-}
-
-const sendBtn = document.getElementById("sendEmail");
-if (sendBtn) {
-  sendBtn.addEventListener("click", () => {
-    const email = document.getElementById("emailInput")?.value || "your email";
+  
+  document.getElementById("sendEmail").addEventListener("click", () => {
+    const email = document.getElementById("emailInput").value || "your email";
     alert(`Report will be sent to ${email} soon.`);
   });
-}
-
-const clearBtn = document.getElementById("clearFilters");
-if (clearBtn) {
-  clearBtn.addEventListener("click", () => {
-    const search = document.getElementById("searchKeywords");
-    const email = document.getElementById("emailInput");
-    if (search) search.value = "";
-    if (email) email.value = "";
+  
+  document.getElementById("clearFilters").addEventListener("click", () => {
+    document.getElementById("searchKeywords").value = "";
+    document.getElementById("emailInput").value = "";
     document.querySelectorAll(".cat").forEach((cb) => (cb.checked = false));
-    const all = document.getElementById("cat_all");
-    if (all) all.checked = true;
+    document.getElementById("cat_all").checked = true;
   });
-}

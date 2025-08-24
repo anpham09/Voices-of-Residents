@@ -3,6 +3,9 @@
     max-width: 900px;
     margin: 0 auto;
     color: #0e3c31;
+    background: #f8fffe;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .discussion_container {
@@ -13,6 +16,10 @@
 .tags_container,
 .comments_container {
     flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 #tagsList li {
@@ -24,6 +31,16 @@
     background: #e0f2f1;
     padding: 6px 10px;
     border-radius: 4px;
+    transition: background 0.2s;
+}
+
+#tagsList li.active {
+    background: #1f846d;
+    color: #fff;
+}
+
+#tagsList li:hover {
+    background: #c8e6e5;
 }
 
 #tagsList button {
@@ -53,6 +70,8 @@
     min-height: 60px;
     margin-top: 10px;
     padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #submitComment {
@@ -63,4 +82,9 @@
     border-radius: 4px;
     padding: 6px 12px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+#submitComment:hover {
+    background: #145a4e;
 }

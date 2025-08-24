@@ -11,19 +11,19 @@ const data = {};
 
 formFile.addEventListener("change", (e) => {
   const file = e.target.files[0];
-  const url = URL.createObjectURL(file);
-  formFileUploaded.src = url;
-  formFileUploaded.style.display = "block";
-  formFileContainer.style.display = "none";
-  data.image = url;
-
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    formFileUploaded.src = reader.result;
+    formFileUploaded.style.display = "block";
+    formFileContainer.style.display = "none";
+    data.image = reader.result;
+  };
+  reader.readAsDataURL(file);
 });
-
-
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     let valid = true;
     for (const input of formInput) {
         const value = input.value.trim();
@@ -32,12 +32,10 @@ form.addEventListener("submit", async (e) => {
             valid = false;
         }
     }
-
     if (!valid) {
         alert("Please fill in all required fields.");
         return;
     }
-
     try {
         const response = await fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", {
             method: "POST",
@@ -52,9 +50,10 @@ form.addEventListener("submit", async (e) => {
         }
 
         alert("Issue submitted successfully!");
-        form.reset();
+        window.location.href = `./viewIssue.html?category=${encodeURIComponent(data.issueCategory)}#filterSection`;
     } catch (error) {
         console.error("Error submitting issue:", error);
         alert("Failed to submit issue. Please try again later.");
     }
 });
+

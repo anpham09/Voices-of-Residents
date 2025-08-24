@@ -1,5 +1,12 @@
+import { app } from "./config.js";
+
 fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues")
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+    return response.json();
+  })
   .then((issueList) => {
     if (!Array.isArray(issueList)) {
       console.error("Invalid response data");

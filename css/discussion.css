@@ -1,0 +1,93 @@
+
+.discussion_section {
+    margin: 120px auto 40px;
+    width: 95%;
+    padding: 20px;
+    background-color: rgb(194, 247, 202);
+    border: 2px solid #205a4c;
+    border-radius: 12px;
+    color: #0e3c31;
+}
+
+.discussion_container {
+    display: flex;
+    gap: 20px;
+}
+
+.tags_container,
+.comments_container {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #205a4c;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#tagsList li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #b8f0c2;
+    color: #0e3c31;
+    padding: 6px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+#tagsList li.active {
+    background: #205a4c;
+    color: rgb(194, 247, 202);
+}
+
+#tagsList li:hover {
+    background: #8ee0a5;
+}
+
+#tagsList button {
+    margin-left: 10px;
+    background: #1f846d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+#commentsList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#commentsList li {
+    margin-bottom: 6px;
+    background: #f1f1f1;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#commentInput {
+    width: 100%;
+    min-height: 60px;
+    margin-top: 10px;
+    padding: 6px;
+    border: 2px solid #205a4c;
+    border-radius: 12px;
+}
+
+#submitComment {
+    margin-top: 8px;
+    background: #1f846d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#submitComment:hover {
+    background: #145a4e;
+}
+

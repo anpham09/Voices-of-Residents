@@ -13,7 +13,7 @@
         <div class="nav_bar_left">
             <div class="nav_item"><a href="./submitIssue.html">Submit Issue</a></div>
             <div class="nav_item"><a href="./viewIssue.html">View Issues</a></div>
-            <div class="nav_item"><a href="">Join the Discussion</a></div>
+            <div class="nav_item"><a href="./discussion.html">Join the Discussion</a></div>
         </div>
         <div class="nav_bar_center"><img src="" alt="Logo"></div>
         <div class="nav_bar_right">
@@ -24,51 +24,56 @@
                     <span class="circles2 circles"></span>
                 </div>
                 <div class="nav_bar_right_content">
-                    
-                    <a href="" class="nav_bar_right_categories">Healthcare</a>
-                    <a href="" class="nav_bar_right_categories">Environment</a>
-                    <a href="" class="nav_bar_right_categories">Immigration</a>
+                    <a href="./viewIssue.html?category=Healthcare#filterSection" class="nav_bar_right_categories">Healthcare</a>
+                    <a href="./viewIssue.html?category=Environment#filterSection" class="nav_bar_right_categories">Environment</a>
+                    <a href="./viewIssue.html?category=Immigration#filterSection" class="nav_bar_right_categories">Immigration</a>
                 </div>
             </div>
-            
         </div>
     </div>
 
-    <div class="issue_container">
-        <div class="issue_container_left">
-            <div class="issue_category">Healthcare</div>
-            <div class="issue_title">Unclean park</div>
-            <div class="issue_description">The park is unclean that affects my 
-                experience, I hope this will be solved soon.
+    <section class="filter_section" id="filterSection">
+        <h2>Filter Issues</h2>
+        <div class="filter_group">
+            <span>Time Period:</span>
+            <div class="time_buttons">
+                <button class="filter_btn" data-period="all">All Time</button>
+                <button class="filter_btn" data-period="today">Today</button>
+                <button class="filter_btn" data-period="week">This Week</button>
+                <button class="filter_btn" data-period="month">This Month</button>
+                <button class="filter_btn" data-period="custom">Custom Range</button>
             </div>
         </div>
-        <div class="issue_container_right"><img src="../img/right_arrow.png" alt="" class="issue_img"></div>
-        
-    </div>
-    <div class="issue_container">
-        <div class="issue_container_left">
-            <div class="issue_category">Healthcare</div>
-            <div class="issue_title">Unclean park</div>
-            <div class="issue_description">The park is unclean that affects my 
-                experience, I hope this will be solved soon.
+
+        <div class="filter_group">
+            <span>Categories:</span>
+            <div class="category_options">
+                <label><input type="checkbox" id="cat_all" checked> All Categories</label>
+                <label><input type="checkbox" class="cat" value="Healthcare"> Healthcare</label>
+                <label><input type="checkbox" class="cat" value="Environment"> Environment</label>
+                <label><input type="checkbox" class="cat" value="Immigration"> Immigration</label>
             </div>
         </div>
-        <div class="issue_container_right"><img src="../img/right_arrow.png" alt="" class="issue_img"></div>
-        
-    </div>
-    <div class="issue_container">
-        <div class="issue_container_left">
-            <div class="issue_category">Healthcare</div>
-            <div class="issue_title">Unclean park</div>
-            <div class="issue_description">The park is unclean that affects my 
-                experience, I hope this will be solved soon.
-            </div>
+
+        <div class="filter_group">
+            <label for="searchKeywords">Search Keywords:</label>
+            <input type="text" id="searchKeywords" placeholder="Search in title or description...">
         </div>
-        <div class="issue_container_right"><img src="../img/right_arrow.png" alt="" class="issue_img"></div>
-        
-    </div>
+
+        <div class="filter_group">
+            <label for="emailInput">Email Address:</label>
+            <input type="email" id="emailInput" placeholder="Enter your email address">
+        </div>
+
+        <div class="filter_actions">
+            <button id="exportPdf">Export PDF</button>
+            <button id="sendEmail">Send Report to Email</button>
+            <button id="clearFilters">Clear Filters</button>
+        </div>
+    </section>
+
+    <div id="issues"></div>
 
     <script defer type="module" src="../js/viewIssue.js"></script>
-
 </body>
 </html>

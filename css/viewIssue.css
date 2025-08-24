@@ -1,3 +1,32 @@
+.filter_section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgb(194, 247, 202);
+    border: 2px solid #205a4c;
+    border-radius: 12px;
+    width: 95%;
+    margin-left: 1%;
+}
+
+.filter_section h2 {
+    color: #0e3c31;
+    margin-bottom: 15px;
+}
+
+.filter_group {
+    margin-bottom: 15px;
+}
+
+.filter_group label,
+.filter_group span {
+    font-weight: bold;
+    color: #0e3c31;
+    margin-right: 10px;
+}
+
+.filter_actions button {
+    margin-right: 10px;
+}
 .issue_container {
     margin-top: 70px;
     display: flex;

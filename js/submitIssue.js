@@ -1,50 +1,65 @@
-const form = document.getElementById('submitIssueFormContainer'); 
+const form = document.getElementById('submitIssueFormContainer');
 const formFile = document.getElementById('formFile');
 const formFileContainer = document.querySelector('.formFileContainer');
 const formFileUploaded = document.querySelector('.formFileUploaded');
 
-const imagePreview = document.getElementById('imagePreview'); 
-const previewImg = document.getElementById('previewImg'); 
-const removeImageBtn = document.getElementById('removeImage'); 
-const formBtnSubmit = document.getElementById('formBtnSubmit');
-
-const issueTitle = document.getElementById("issueTitle"); 
-const formInput = document.querySelectorAll(".formInput"); 
+const formInput = document.querySelectorAll(".formInput");
 
 const data = {};
 
 formFile.addEventListener("change", (e) => {
   const file = e.target.files[0];
-  const url = URL.createObjectURL(file);
-  formFileUploaded.src = url;
-  formFileUploaded.style.display = "block";
-  formFileContainer.style.display = "none";
-  data.url = url;
-
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    formFileUploaded.src = reader.result;
+    formFileUploaded.style.display = "block";
+    // hide the upload placeholder once an image is chosen
+    formFileContainer.style.display = "none";
+    data.image = reader.result;
+  };
+  reader.readAsDataURL(file);
 });
 
 
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-
-    const data = {};
+    let valid = true;
     for (const input of formInput) {
-        data[input.name] = input.value;
+        const value = input.value.trim();
+        data[input.name] = value;
+        if (!value) {
+            valid = false;
+        }
     }
 
-    const id = "" + Math.random().toString(16).slice(2);
-    console.log(id);
-    
-    console.log(data);
+    if (!valid) {
+        alert("Please fill in all required fields.");
+        return;
+    }
 
+    try {
+        const response = await fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
 
-    fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-    });
+        if (!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        const created = await response.json();
+        sessionStorage.setItem('recentIssue', JSON.stringify(created));
+
+        alert("Issue submitted successfully!");
+        window.location.href = `./viewIssue.html?category=${encodeURIComponent(created.issueCategory)}#filterSection`;
+    } catch (error) {
+        console.error("Error submitting issue:", error);
+        alert("Failed to submit issue. Please try again later.");
+    }
 });

@@ -9,7 +9,6 @@
     top: 0;
     width: 100%;
 
-    /* Color */
     background-color: #1f846d;
     background: linear-gradient(to right, #000000, #216a59, #19846b);
     color: rgb(194, 247, 202);
@@ -32,7 +31,6 @@
     border-radius: 0%;
 }
 
-/* Dropdown */
 .nav_bar_right_btn {
     border: none;
     background: none;
@@ -94,7 +92,6 @@
     left: 120px;
 }
 
-/* Background */
 .background {
     position: relative;
     width: 100%;
@@ -172,7 +169,6 @@
     display: inline-block;
 }
 .submit_issue_btn {
-    /* padding: 30px; */
     display: flex;
     justify-content: center;
     align-items: center;

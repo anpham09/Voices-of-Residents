@@ -71,6 +71,7 @@ body {
     background-color: #1f804f;
     color: rgb(217, 250, 222);
     font-size: 16px;
+    cursor: pointer;
 }
 .loader {
     display: none;

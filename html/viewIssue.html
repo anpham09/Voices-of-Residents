@@ -10,12 +10,13 @@
 </head>
 <body>
     <div class="nav_bar">
+        <div class="nav_bar_center"><a href="../index.html"><img src="../img/Screenshot 2025-09-06 at 1.02.50 PM.png" alt="Logo" id="logo"></a></div>
+
         <div class="nav_bar_left">
             <div class="nav_item"><a href="./submitIssue.html">Submit Issue</a></div>
             <div class="nav_item"><a href="./viewIssue.html">View Issues</a></div>
             <div class="nav_item"><a href="./discussion.html">Join the Discussion</a></div>
         </div>
-        <div class="nav_bar_center"><img src="" alt="Logo"></div>
         <div class="nav_bar_right">
             <button class="nav_bar_right_btn">Categories</button>
             <div class="nav_bar_right_content_container">
@@ -66,14 +67,18 @@
         </div>
 
         <div class="filter_actions">
-            <button id="exportPdf">Export PDF</button>
-            <button id="sendEmail">Send Report to Email</button>
-            <button id="clearFilters">Clear Filters</button>
+            <button id="exportPdf" class="viewIssueBtn">Export PDF</button>
+            <button id="sendEmail" class="viewIssueBtn">Send Report to Email</button>
+            <button id="clearFilters" class="viewIssueBtn">Clear Filters</button>
         </div>
     </section>
 
     <div id="issues"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script defer type="module" src="../js/viewIssue.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>

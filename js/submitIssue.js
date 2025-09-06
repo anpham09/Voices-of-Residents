@@ -1,65 +1,66 @@
-const form = document.getElementById('submitIssueFormContainer');
-const formFile = document.getElementById('formFile');
-const formFileContainer = document.querySelector('.formFileContainer');
-const formFileUploaded = document.querySelector('.formFileUploaded');
+const STORAGE_KEY = "issues";
+
+const form = document.getElementById("submitIssueFormContainer");
+const formFile = document.getElementById("formFile");
+const formFileContainer = document.querySelector(".formFileContainer");
+const formFileUploaded = document.querySelector(".formFileUploaded");
 
 const formInput = document.querySelectorAll(".formInput");
 
-const data = {};
+const data = {}; 
 
-formFile.addEventListener("change", (e) => {
-  const file = e.target.files[0];
+formFile?.addEventListener("change", (e) => {
+  const file = e.target.files?.[0];
   if (!file) return;
+
   const reader = new FileReader();
   reader.onload = () => {
     formFileUploaded.src = reader.result;
     formFileUploaded.style.display = "block";
-    // hide the upload placeholder once an image is chosen
-    formFileContainer.style.display = "none";
+    if (formFileContainer) formFileContainer.style.display = "none";
     data.image = reader.result;
   };
   reader.readAsDataURL(file);
 });
 
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
 
+  let valid = true;
+  for (const input of formInput) {
+    const value = input.value.trim();
+    data[input.name] = value;
+    if (!value) valid = false;
+  }
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  if (!valid) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
-    let valid = true;
-    for (const input of formInput) {
-        const value = input.value.trim();
-        data[input.name] = value;
-        if (!value) {
-            valid = false;
-        }
-    }
+  if (!data.image) data.image = "";
 
-    if (!valid) {
-        alert("Please fill in all required fields.");
-        return;
-    }
+  const issue = {
+    id: String(Date.now()), 
+    createdAt: Date.now(),
+    ...data,
+  };
 
-    try {
-        const response = await fetch("https://68795a5563f24f1fdca1c567.mockapi.io/Issues", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
+  try {
+    const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    if (!Array.isArray(existing)) throw new Error("Corrupt storage");
+    existing.push(issue);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+  } catch (err) {
+    console.error("Failed to save to localStorage:", err);
+    alert("Storage error. Please clear site data or try again.");
+    return;
+  }
 
-        if (!response.ok) {
-            throw new Error(`Request failed with status ${response.status}`);
-        }
+  sessionStorage.setItem("recentIssue", JSON.stringify(issue));
 
-        const created = await response.json();
-        sessionStorage.setItem('recentIssue', JSON.stringify(created));
-
-        alert("Issue submitted successfully!");
-        window.location.href = `./viewIssue.html?category=${encodeURIComponent(created.issueCategory)}#filterSection`;
-    } catch (error) {
-        console.error("Error submitting issue:", error);
-        alert("Failed to submit issue. Please try again later.");
-    }
+  alert("Issue submitted successfully!");
+  window.location.href = `./viewIssue.html?category=${encodeURIComponent(
+    issue.issueCategory
+  )}#filterSection`;
 });

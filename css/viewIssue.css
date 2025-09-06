@@ -96,3 +96,16 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+#emailInput, #searchKeywords{
+    width: 15%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #0e3c31;
+    color: #0e3c31;
+    /* color: #b8f0c2; */
+    font-size: 17px;
+    line-height: 20px;
+    border-radius: 8px;
+    background-color: #b8f0c2;
+}

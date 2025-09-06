@@ -68,14 +68,49 @@ list.forEach(renderIssue);
 const exportBtn = document.getElementById("exportPdf");
 
 if (exportBtn) {
-  exportBtn.addEventListener("click", () => {
+  exportBtn.addEventListener("click", async () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    doc.text("Hello! This is your exported PDF.", 10, 10);
+    const issueEls = document.querySelectorAll("#issues .issue_container");
+
+    if (issueEls.length === 0) {
+      doc.text("No issues to export.", 10, 10);
+    } else {
+      const pdfWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+
+      for (let i = 0; i < issueEls.length; i += 2) {
+        const canvas1 = await html2canvas(issueEls[i]);
+        const imgData1 = canvas1.toDataURL("image/png");
+        let img1Height = (canvas1.height * pdfWidth) / canvas1.width;
+
+        let img2Height = 0;
+        let imgData2 = null;
+        if (issueEls[i + 1]) {
+          const canvas2 = await html2canvas(issueEls[i + 1]);
+          imgData2 = canvas2.toDataURL("image/png");
+          img2Height = (canvas2.height * pdfWidth) / canvas2.width;
+
+          const total = img1Height + img2Height;
+          if (total > pageHeight) {
+            const scale = pageHeight / total;
+            img1Height *= scale;
+            img2Height *= scale;
+          }
+        }
+
+        doc.addImage(imgData1, "PNG", 0, 0, pdfWidth, img1Height);
+        if (imgData2) {
+          doc.addImage(imgData2, "PNG", 0, img1Height, pdfWidth, img2Height);
+        }
+
+        if (i + 2 < issueEls.length) doc.addPage();
+      }
+    }
 
     const today = new Date();
-    const formattedDate = today.toISOString().split("T")[0]; 
+    const formattedDate = today.toISOString().split("T")[0];
     doc.save(`export_${formattedDate}.pdf`);
   });
 }

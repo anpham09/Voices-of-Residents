@@ -3,17 +3,17 @@
 
 ## Introduction
 
-**Voices of Residents** highlights local voices on the issues they observe in their communities. People can submit concerns, browse and discuss with neighbors, and explore solutions — helping relieve worries and creating visibility. Local leaders can use summaries to better understand residents’ needs and challenges.
+**Voices of Residents** highlights local voices on the issues they observe in their communities. People can submit concerns, browse and discuss with neighbors, and explore solutions: helping relieve worries and creating visibility. Local leaders can use summaries to better understand residents’ needs and challenges.
 
 ---
 
 ## Features
 
-- **Submit an Issue** — title, description, category, and optional image  
-- **View Issues** — fast list with category filters, keyword search (WIP), and time presets  
-- **Discussion-first** — page to join conversations about each issue (scoped for MVP)  
-- **Email Summary** — send a titles-only summary of filtered issues to any email via EmailJS  
-- **Client-side Storage** — issues are stored in `localStorage` for a simple MVP
+- **Submit an Issue** title, description, category, and optional image  
+- **View Issues** fast list with category filters, keyword search (WIP), and time presets  
+- **Discussion-first** page to join conversations about each issue (scoped for MVP)  
+- **Email Summary** send a titles-only summary of filtered issues to any email via EmailJS  
+- **Client-side Storage** issues are stored in local storage for a simple MVP
 
 ## Roadmap: 
 - Move from localStorage to a shared cloud backend (Firebase) so everyone sees the same data.
@@ -27,6 +27,6 @@
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript (no framework)  
-- **Data (MVP):** `localStorage`  
+- **Data (MVP):** local storage
 - **Email:** [EmailJS](https://www.emailjs.com/) (no backend required)  
 - **Optional (earlier prototype):** jsPDF for PDF export

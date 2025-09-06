@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    color: #0f3b34;              
+    background-color: #e0f2ee;   
+    line-height: 1.6;
+}
+
+.why-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.why-header {
+    padding: 28px 0 8px;
+    border-bottom: 1px solid #cde8e3;
+}
+
+.why-home {
+    color: #2e6b61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.why-pill {
+    display: inline-block;
+    background-color: #cde8e3;
+    color: #2e6b61;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 12px;
+}
+
+.why-h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.15;
+    margin: 12px 0 8px;
+}
+
+.why-lede {
+    max-width: 75ch;
+    margin: 0 0 18px;
+    font-size: 1.1rem;
+}
+
+.why-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.why-btn {
+    background-color: #0f3b34;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #0a2a24;
+}
+
+.why-btn-alt {
+    background-color: #ffffff;
+    color: #0f3b34;
+    border-color: #cde8e3;
+}
+
+.why-main {
+    margin-top: 22px;
+}
+
+.why-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.why-card {
+    background-color: #ffffff;
+    border: 1px solid #cde8e3;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.why-span-12 { grid-column: span 12; }
+.why-span-8  { grid-column: span 12; }
+.why-span-6  { grid-column: span 12; }
+.why-span-4  { grid-column: span 12; }
+
+.why-h2 {
+    margin: 0.2rem 0 0.6rem;
+}
+
+.why-ul {
+    margin: 0.2rem 0 0.4rem 1.1rem;
+}
+
+.why-ol {
+    margin: 0.2rem 0 0.4rem 1.1rem;
+}
+
+.why-note {
+    font-size: 0.95rem;
+    color: #1f5148;
+}
+
+.why-kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    background-color: #f3faf8;
+    border: 1px solid #cde8e3;
+    padding: 0.1rem 0.35rem;
+    border-radius: 6px;
+}
+
+.why-footer {
+    margin: 36px 0 8px;
+    font-size: 0.92rem;
+    color: #1f5148;
+}

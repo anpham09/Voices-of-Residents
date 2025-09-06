@@ -165,7 +165,7 @@
 .title_bottom_right {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 22px;
     color: #0e3c31;
 }
 .title_bottom_right button {

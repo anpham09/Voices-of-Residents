@@ -12,6 +12,7 @@
     background-color: #1f846d;
     background: linear-gradient(to right, #000000, #216a59, #19846b);
     color: rgb(194, 247, 202);
+    /* background-image: url(../Screenshot\ 2025-10-31\ at\ 9.33.09\ AM.png); */
     font-size: 22px;
     z-index: 1000;
 }
@@ -97,12 +98,8 @@
     width: 100%;
     height: 800px; 
     overflow: hidden;
-}
-.background video {
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
+    background-image: url(../Screenshot\ 2025-10-31\ at\ 9.33.09\ AM.png);
+
 }
 
 

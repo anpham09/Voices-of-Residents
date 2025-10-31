@@ -8,6 +8,21 @@
     color: #0e3c31;
 }
 
+.discussion_section h2 {
+    display: block;
+    color: #0a2d25;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.tags_container h3,
+.comments_container h3 {
+    color: #0e3c31;
+    margin-bottom: 10px;
+}
+
 .discussion_container {
     display: flex;
     gap: 20px;
@@ -33,6 +48,39 @@
     padding: 6px 10px;
     border-radius: 20px;
     transition: 0.2s;
+}
+
+.tag_info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status_hint {
+    margin-bottom: 10px;
+    color: #0e3c31;
+}
+
+.status_label {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.status-reported {
+    background: #e5a3a3;
+    color: #571a1a;
+}
+
+.status-investigating {
+    background: #ffe8a1;
+    color: #6b5700;
+}
+
+.status-resolved {
+    background: #205a4c;
+    color: rgb(194, 247, 202);
 }
 
 #tagsList li.active {
@@ -77,15 +125,23 @@
 
 #submitComment {
     margin-top: 8px;
-    background: #1f846d;
-    color: #fff;
+    padding: 10px 0;
+    width: 120px;
     border: none;
     border-radius: 8px;
-    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f804f;
+    color: rgb(217, 250, 222);
+    font-size: 16px;
     cursor: pointer;
     transition: 0.2s;
+    transition: background-color 0.2s;
 }
 
 #submitComment:hover {
     background: #145a4e;
 }
+
+
